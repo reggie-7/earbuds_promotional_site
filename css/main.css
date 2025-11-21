@@ -49,8 +49,7 @@ model-viewer {
   visibility: hidden;
   opacity: 0;
   background: rgba(255, 255, 255, 0.95);
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   color: #1d1d1f;
@@ -65,7 +64,6 @@ model-viewer {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: -moz-max-content;
   width: max-content;
   text-align: left;
 }
@@ -113,11 +111,127 @@ model-viewer::part(default-progress-mask) {
   position: sticky;
   top: 0;
   left: 0;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   background: #d1d0d0;
 }
 
+.slider-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+#xray {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  background-image: url(../images/earbuddy.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+#divisor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  aspect-ratio: 16/10;
+  background-image: url(../images/xxray.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px 0 0 15px;
+  overflow: hidden;
+}
+#divisor::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: calc(100% + 30px);
+  height: 20px;
+  background: transparent;
+  cursor: pointer;
+  z-index: 10;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  height: 0;
+  background: transparent;
+  border: none;
+}
+
+input[type=range]::-moz-range-track {
+  height: 0;
+  background: transparent;
+  border: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border-radius: 50%;
+  border: 3px solid #000;
+  cursor: grab;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+input[type=range]::-webkit-slider-thumb:active {
+  cursor: grabbing;
+  transform: scale(1.1);
+}
+
+input[type=range]::-moz-range-thumb {
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border-radius: 50%;
+  border: 3px solid #000;
+  cursor: grab;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+input[type=range]::-moz-range-thumb:active {
+  cursor: grabbing;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .slider-container {
+    padding: 20px 10px;
+  }
+  #xray {
+    border-radius: 10px;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    width: 25px;
+    height: 25px;
+  }
+  input[type=range]::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+  }
+}
 /* Reset and Base Styles */
 * {
   margin: 0;
@@ -142,8 +256,7 @@ body {
   top: 0;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
   z-index: 1000;
   padding: 12px 0;
 }
