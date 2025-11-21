@@ -1,0 +1,24 @@
+.sequence-container {
+  width: 100vw;
+//   height: 100vh;
+  position: relative;
+  background: #d6d6d6;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.sequence-container canvas {
+  width: 100vw;
+//   height: 100vh;
+  display: block;
+  position: sticky;
+  top: 0;
+  left: 0;
+  object-fit: contain;
+  background: #d1d0d0;
+}
