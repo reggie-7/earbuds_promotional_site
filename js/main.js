@@ -1,4 +1,58 @@
+// Canvas scroll animation IIFE
 (() => {
+  console.log("Canvas IIFE Called");
+
+  const canvas = document.querySelector("#earbuds-view");
+  const context = canvas.getContext("2d");
+
+  canvas.width = 1920;
+  canvas.height = 1080;
+
+  const frameCount = 301;
+  const images = [];
+
+  const buds = {
+    frame: 0
+  };
+
+  // I'm loading all the webp frames into an array
+  for (let i = 0; i < frameCount; i++) {
+    const img = new Image();
+    img.src = `images/final_${i.toString().padStart(5, '0')}.webp`;
+    images.push(img);
+  }
+  
+  console.log("Total images loaded:", images.length);
+
+ 
+  
+  gsap.to(buds, {
+    frame: frameCount - 1,
+    snap: "frame",
+    scrollTrigger: {
+      trigger: ".sequence-container",
+      pin: true,
+      scrub: 1,
+      start: "top top",
+      markers: true
+    },
+    onUpdate: render
+  });
+
+  images[0].addEventListener("load", render);
+
+  function render() {
+    console.log("Rendering frame:", buds.frame);
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.drawImage(images[buds.frame], 0, 0);
+  }
+
+})();
+
+// Hotspots IIFE
+(() => {
+  console.log("Hotspots IIFE Called");
+
   const hotspots = document.querySelectorAll(".Hotspot");
 
   const infoBoxes = [
@@ -8,77 +62,57 @@
       text: "Noise-cancelling microphones and a rear copper shield are optimally placed to quickly detect outside noises, working together to counter noise before it disturbs your experience."
     },
     {
-      image: "images/earpiece.png",
-      title: "Comfortable fit",
-      text: "Three pairs of ultra comfortable silicone tips are included. The tips create an acoustic seal that blocks outside audio and secures the earbuds in place."
-    },
-    {
       image: "images/audio.png",
       title: "360 AUDIO",
       text: "360 Audio places sound all around you, while Dolby Head Tracking™ technology delivers an incredible three-dimensional listening experience."
+    },
+    {
+      image: "images/earpiece.png",
+      title: "Comfortable fit",
+      text: "Three pairs of ultra comfortable silicone tips are included. The tips create an acoustic seal that blocks outside audio and secures the earbuds in place."
     },
     {
       image: "images/charging.png",
       title: "Ultra Fast Charging",
       text: "Charge your earbuds in 30 minutes or less with our hyper charging technology."
     }
-  ]
+  ];
 
-//functions
-
+  // I'm dynamically creating the hotspot content from the array
   function loadInfo() {
-    infoBoxes.forEach((infoBox, index)=>{
-      // console.log(index+1);
-      //selected will be the inforBox on our page, e.g.hotspot-1, hotspot-2, etc.
-      let selected = document.querySelector(`#hotspot-${index+1}`);
-      console.log(selected);
+    infoBoxes.forEach(function(infoBox, index) {
+      let selected = document.querySelector(`#hotspot-${index + 1}`);
 
-      //lets create an img
       const imageElement = document.createElement('img');
-      //lets populate the img
       imageElement.src = infoBox.image;
 
-      //lets create an h2
       const titleElement = document.createElement('h2');
-      //lets populate the h2
       titleElement.textContent = infoBox.title;
 
-      //lets create a p
       const textElement = document.createElement('p');
-      //lets populate the p
       textElement.textContent = infoBox.text;
 
-      //lets add the img to the selected hotspot
       selected.appendChild(imageElement);
-      //lets add the h2 to the selected hotspot
       selected.appendChild(titleElement);
-      //lets add the p to the selected hotspot
       selected.appendChild(textElement);
-
     });
   }
-  loadInfo();
 
-   function showInfo() {
-    //console.log(this.slot);
-    //console.log(`#${this.slot}`);
-    //since the slot value matches the id value I can use the slot value as a selector to get to the div I want.
-    let selected = document.querySelector(`#${this.slot}`);
+  function showInfo() {
+    let selected = this.querySelector('.HotspotAnnotation');
     gsap.to(selected, { duration: 1, autoAlpha: 1 });
   }
 
   function hideInfo() {
-    //console.log(this.slot);
-    //console.log(`#${this.slot}`);
-    let selected = document.querySelector(`#${this.slot}`);
+    let selected = this.querySelector('.HotspotAnnotation');
     gsap.to(selected, { duration: 1, autoAlpha: 0 });
   }
-  
- hotspots.forEach(function (hotspot) {
+
+  loadInfo();
+
+  hotspots.forEach(function(hotspot) {
     hotspot.addEventListener("mouseenter", showInfo);
     hotspot.addEventListener("mouseleave", hideInfo);
   });
 
 })();
-
-// In this version, the event listeners use regular functions instead of arrow functions, so the "this" keyword inside the event listeners will refer to the DOM element that triggered the event.
