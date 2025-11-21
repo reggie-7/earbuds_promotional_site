@@ -116,3 +116,21 @@
   });
 
 })();
+
+(() => {
+
+    const divisor = document.querySelector("#divisor");
+    const slider = document.querySelector("#slider");
+
+    function moveDivisor() {
+        // console.log(slider.value);
+        divisor.style.width = `${slider.value}%`;
+    }
+
+    function resetSlider() {
+        slider.value = 50;
+    }
+
+    slider.addEventListener("input", moveDivisor);
+    window.addEventListener("load", resetSlider);
+})();
