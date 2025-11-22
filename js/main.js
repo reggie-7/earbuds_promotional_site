@@ -117,6 +117,7 @@
 
 })();
 
+// X-Ray Slider IIFE
 (() => {
 
     const divisor = document.querySelector("#divisor");
