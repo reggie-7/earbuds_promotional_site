@@ -134,3 +134,36 @@
     slider.addEventListener("input", moveDivisor);
     window.addEventListener("load", resetSlider);
 })();
+
+// Hamburger Menu IIFE
+(() => {
+  console.log("Hamburger Menu Called");
+
+  const hamburger = document.querySelector("#hamburger");
+  const mobileMenu = document.querySelector("#mobile-menu");
+  const mobileLinks = document.querySelectorAll(".mobile-menu a");
+  const buyButtonMobile = document.querySelector(".buy-button-mobile");
+
+  function toggleMenu() {
+    hamburger.classList.toggle("active");
+    mobileMenu.classList.toggle("active");
+  }
+
+  function closeMenu() {
+    hamburger.classList.remove("active");
+    mobileMenu.classList.remove("active");
+  }
+
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener("click", toggleMenu);
+    
+    mobileLinks.forEach(function(link) {
+      link.addEventListener("click", closeMenu);
+    });
+
+    if (buyButtonMobile) {
+      buyButtonMobile.addEventListener("click", closeMenu);
+    }
+  }
+
+})();
