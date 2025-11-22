@@ -168,3 +168,88 @@
   }
 
 })();
+
+const featureSections = document.querySelectorAll('.feature-section');
+const xrayH2 = document.querySelector('.xray-section h2');
+const xrayP = document.querySelector('.xray-section p');
+const specItems = document.querySelectorAll('.tech-specs .spec-item');
+
+function setupFeatureReveals() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    featureSections.forEach(section => {
+        const textElement = section.querySelector('.feature-text');
+        const imageElement = section.querySelector('.feature-image');
+        
+        // Text Reveal Animation
+        if (textElement) {
+            gsap.from(textElement, {
+                opacity: 0,
+                y: 50,
+                duration: 1.0,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: textElement,
+                    start: 'top 85%',
+                }
+            });
+        }
+
+        // Image Reveal Animation
+        if (imageElement) {
+            gsap.from(imageElement.querySelector('img'), { 
+                opacity: 0,
+                scale: 0.95,
+                duration: 1.2,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: imageElement,
+                    start: 'top 85%',
+                }
+            });
+        }
+    });
+}
+
+function setupXrayHeading() {
+    gsap.from(xrayH2, {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        ease: 'power1.out',
+        scrollTrigger: {
+            trigger: '.xray-section',
+            start: 'top 80%',
+        }
+    });
+    
+    gsap.from(xrayP, {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        ease: 'power1.out',
+        scrollTrigger: {
+            trigger: '.xray-section',
+            start: 'top 80%',
+        },
+        delay: 0.2 
+    });
+}
+
+function setupTechSpecs() {
+    gsap.from(specItems, {
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: 'back.out(1.2)',
+        scrollTrigger: {
+            trigger: '.tech-specs',
+            start: 'top 85%',
+        }
+    });
+}
+
+setupFeatureReveals();
+setupXrayHeading();
+setupTechSpecs();
