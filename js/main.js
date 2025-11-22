@@ -138,7 +138,7 @@
 
 // Hamburger Menu IIFE
 (() => {
-  console.log("Hamburger Menu IIFE Called");
+  console.log("Hamburger Menu Called");
 
   const hamburger = document.querySelector("#hamburger");
   const mobileMenu = document.querySelector("#mobile-menu");
