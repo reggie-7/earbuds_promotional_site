@@ -20,6 +20,7 @@ model-viewer {
   height: 700px;
   background-color: transparent;
   margin: 0 auto;
+  margin-bottom: 60px;
 }
 
 .Hotspot {
@@ -122,6 +123,41 @@ model-viewer::part(default-progress-mask) {
   background-image: url(../images/earbuddy.jpg);
   background-size: cover;
   border-radius: 15px;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 60px;
+}
+@media (min-width: 768px) {
+  h2 {
+    font-size: 40px;
+  }
+}
+@media (min-width: 1200px) {
+  h2 {
+    font-size: 48px;
+  }
+}
+
+.grid-con div p {
+  font-size: 18px;
+  color: #a1a1a6;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+@media (min-width: 768px) {
+  .grid-con div p {
+    font-size: 20px;
+    margin-bottom: 60px;
+  }
 }
 
 #divisor {
