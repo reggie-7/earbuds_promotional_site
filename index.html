@@ -6,218 +6,260 @@
     <title>Buzz EarBuds</title>
     <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="css/grid.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
 </head>
 <body>
     <h1 class="hidden">Buzz EarBuds Pro</h1>
+    
     <!-- Navigation -->
     <nav id="navbar">
         <h1 class="hidden">Main Nav</h1>
-    <div class="nav-container">
-        <a href="#" class="logo">
-            <img src="/images/logo.svg" alt="Buzz Logo">Buzz
-        </a>
-        <div class="nav-links">
-            <a href="#overview">Overview</a>
-            <a href="#features">Features</a>
-            <a href="#specs">Tech Specs</a>
-            <a href="#compare">Compare</a>
-        </div>
-        <button class="buy-button">Buy</button>
-    </div>
-</nav>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Buzz EarBuds Pro</h2>
-            <p>Adaptive Audio. Now playing.</p>
-            <div class="hero-buttons">
-                <button class="btn-primary">
-                    <i class="fas fa-shopping-bag"></i> Buy
-                </button>
-                <button class="btn-secondary">
-                    <i class="fas fa-play-circle"></i> Watch the film
-                </button>
+        <div class="grid-con">
+            <div class="col-span-4 m-col-span-12 l-col-span-12">
+                <div class="nav-container">
+                    <a href="#" class="logo">
+                        <img src="images/logo.svg" alt="Buzz Logo">Buzz
+                    </a>
+                    <div class="nav-links">
+                        <a href="#overview">Overview</a>
+                        <a href="#features">Features</a>
+                        <a href="#specs">Tech Specs</a>
+                    </div>
+                    <button class="buy-button">Buy</button>
+                    <button class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
             </div>
         </div>
-        
-        <div class="model-container">
-            <model-viewer src="model/earbuds.gltf" 
-                         ar 
-                         ar-modes="scene-viewer webxr quick-look" 
-                         camera-controls 
-                         tone-mapping="neutral" 
-                         poster="images/poster.png" 
-                         shadow-intensity="1.76" 
-                         exposure="1.37" 
-                         shadow-softness="0"
-                         auto-rotate
-                         camera-orbit="0deg 75deg 2.5m">
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#overview">Overview</a>
+        <a href="#features">Features</a>
+        <a href="#specs">Tech Specs</a>
+        <button class="buy-button-mobile">Buy</button>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="grid-con">
+            <div class="col-span-4 m-col-span-12 l-col-span-12 hero-content">
+                <h2>Buzz EarBuds Pro</h2>
+                <p>Adaptive Audio. Now playing.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary">
+                        <i class="fas fa-shopping-bag"></i> Buy
+                    </button>
+                    <button class="btn-secondary">
+                        <i class="fas fa-play-circle"></i> Watch the film
+                    </button>
+                </div>
+            </div>
+            
+            <div class="col-span-4 m-col-span-12 l-col-span-12 model-container">
+                <model-viewer src="model/earbuds.gltf" 
+                             ar 
+                             ar-modes="scene-viewer webxr quick-look" 
+                             camera-controls 
+                             tone-mapping="neutral" 
+                             poster="images/poster.png" 
+                             shadow-intensity="1.76" 
+                             exposure="1.37" 
+                             shadow-softness="0"
+                             auto-rotate
+                             camera-orbit="0deg 75deg 2.5m">
 
-                <button class="Hotspot" 
-                        slot="hotspot-1" 
-                        data-position="0.006571853455529861m 0.044579671943413404m -0.010525011686859181m" 
-                        data-normal="0.9301888543279391m 0.026685764184962255m -0.36611004530597197m" 
-                        data-visibility-attribute="visible">
-                    <span class="HotspotAnnotation" id="hotspot-1"></span>
-                </button>
+                    <button class="Hotspot" 
+                            slot="hotspot-1" 
+                            data-position="0.006571853455529861m 0.044579671943413404m -0.010525011686859181m" 
+                            data-normal="0.9301888543279391m 0.026685764184962255m -0.36611004530597197m" 
+                            data-visibility-attribute="visible">
+                        <span class="HotspotAnnotation" id="hotspot-1"></span>
+                    </button>
 
-                <button class="Hotspot" 
-                        slot="hotspot-2" 
-                        data-position="-0.006764624594465368m 0.04111988851132431m -0.011927980155676313m" 
-                        data-normal="-0.8252153914755279m -0.4475421570152526m -0.34456577799605403m" 
-                        data-visibility-attribute="visible">
-                    <span class="HotspotAnnotation" id="hotspot-2"></span>
-                </button>
+                    <button class="Hotspot" 
+                            slot="hotspot-2" 
+                            data-position="-0.006764624594465368m 0.04111988851132431m -0.011927980155676313m" 
+                            data-normal="-0.8252153914755279m -0.4475421570152526m -0.34456577799605403m" 
+                            data-visibility-attribute="visible">
+                        <span class="HotspotAnnotation" id="hotspot-2"></span>
+                    </button>
 
-                <button class="Hotspot" 
-                        slot="hotspot-3" 
-                        data-position="0.007201014075069534m 0.04541729118238088m -0.003357894877283548m" 
-                        data-normal="-0.8816996167204393m 0.10046874221124209m 0.46099004079645967m" 
-                        data-visibility-attribute="visible">
-                    <span class="HotspotAnnotation" id="hotspot-3"></span>
-                </button>
+                    <button class="Hotspot" 
+                            slot="hotspot-3" 
+                            data-position="0.007201014075069534m 0.04541729118238088m -0.003357894877283548m" 
+                            data-normal="-0.8816996167204393m 0.10046874221124209m 0.46099004079645967m" 
+                            data-visibility-attribute="visible">
+                        <span class="HotspotAnnotation" id="hotspot-3"></span>
+                    </button>
 
-
-                <button class="Hotspot" 
-                        slot="hotspot-4" 
-                        data-position="0.0011748885158626762m 0.018355340214519227m 0.007407651364774243m" 
-                        data-normal="-0.03353577730827223m -0.3424315718711425m -0.9389440719372952m" 
-                        data-visibility-attribute="visible">
-                     <span class="HotspotAnnotation" id="hotspot-4"></span>
-                </button>
-            </model-viewer>
+                    <button class="Hotspot" 
+                            slot="hotspot-4" 
+                            data-position="0.0011748885158626762m 0.018355340214519227m 0.007407651364774243m" 
+                            data-normal="-0.03353577730827223m -0.3424315718711425m -0.9389440719372952m" 
+                            data-visibility-attribute="visible">
+                         <span class="HotspotAnnotation" id="hotspot-4"></span>
+                    </button>
+                </model-viewer>
+            </div>
         </div>
     </section>
 
+    <!-- Canvas Scroll Animation -->
     <div class="sequence-container">
         <canvas id="earbuds-view"></canvas>
     </div>
     
-    <!-- Feature Section 1 -->
-    <section class="feature-section">
-        <div class="feature-text">
-            <h3>Adaptive Audio</h3>
-            <p>Dynamically tunes noise cancellation based on your environment. Interaction with the world around you feels natural as your audio seamlessly adjusts between Noise Cancellation and Transparency mode.</p>
-            <a href="#" class="btn-secondary">Learn more</a>
+    <!-- X-Ray Slider Section -->
+    <section class="xray-section">
+         <div class="grid-con">
+        <div class="col-span-full">
         </div>
-        <div class="feature-image">
-            <img src="/images/earbudspublic.jpg" alt="Adaptive Audio">
-        </div>
-    </section>
-    
-    <!-- Feature Section 2 -->
-    <section class="feature-section">
-        <div class="feature-text">
-            <h3>Personalized Volume</h3>
-            <p>Using machine learning, this feature understands environmental conditions and listening preferences over time to automatically fine-tune the media volume for you.</p>
-            <a href="#" class="btn-secondary">Learn more</a>
-        </div>
-        <div class="feature-image">
-            <img src="/images/earbudspublic1.jpg" alt="Personalized Volume">
-        </div>
-    </section>
-    
-    <!-- Feature Section 3 -->
-    <section class="feature-section">
-        <div class="feature-text">
-            <h3>Conversation Awareness</h3>
-            <p>When you start speaking, Conversation Awareness automatically lowers the volume of what's playing and enhances the voices in front of you, so you can chat without missing a beat.</p>
-            <a href="#" class="btn-secondary">Learn more</a>
-        </div>
-        <div class="feature-image">
-            <img src="/images/earbudspublic2.jpg" alt="Conversation Awareness">
-        </div>
-    </section>
-
-    <div class="slider-container">        
+        <div class="col-span-full">        
                 <div id="xray">
                     <div id="divisor"></div>
                     <input type="range" min="0" max="100" value="50" id="slider">
                 </div>    
         </div>
+    </div>
+    </section>
+    
+    <!-- Feature Section 1 -->
+    <section class="feature-section">
+        <div class="grid-con">
+            <div class="col-span-4 m-col-span-6 l-col-span-6 feature-text">
+                <h3>Adaptive Audio</h3>
+                <p>Dynamically tunes noise cancellation based on your environment. Interaction with the world around you feels natural as your audio seamlessly adjusts between Noise Cancellation and Transparency mode.</p>
+                <a href="#" class="btn-secondary">Learn more</a>
+            </div>
+            <div class="col-span-4 m-col-span-6 l-col-span-6 feature-image">
+                <img src="images/earbudspublic.jpg" alt="Adaptive Audio">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Feature Section 2 -->
+    <section class="feature-section">
+        <div class="grid-con">
+            <div class="col-span-4 m-col-span-6 l-col-span-6 feature-image">
+                <img src="images/earbudspublic1.jpg" alt="Personalized Volume">
+            </div>
+            <div class="col-span-4 m-col-span-6 l-col-span-6 feature-text">
+                <h3>Personalized Volume</h3>
+                <p>Using machine learning, this feature understands environmental conditions and listening preferences over time to automatically fine-tune the media volume for you.</p>
+                <a href="#" class="btn-secondary">Learn more</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Feature Section 3 -->
+    <section class="feature-section">
+        <div class="grid-con">
+            <div class="col-span-4 m-col-span-6 l-col-span-6 feature-text">
+                <h3>Conversation Awareness</h3>
+                <p>When you start speaking, Conversation Awareness automatically lowers the volume of what's playing and enhances the voices in front of you, so you can chat without missing a beat.</p>
+                <a href="#" class="btn-secondary">Learn more</a>
+            </div>
+            <div class="col-span-4 m-col-span-6 l-col-span-6 feature-image">
+                <img src="images/earbudspublic2.jpg" alt="Conversation Awareness">
+            </div>
+        </div>
+    </section>
     
     <!-- Tech Specs Section -->
     <section class="tech-specs" id="specs">
-        <div class="tech-specs-container">
-            <h3>Tech Specs</h3>
-            <div class="specs-grid">
-                <div class="spec-item">
-                    <i class="fas fa-battery-full"></i>
-                    <h4>6 Hours of Listening Time</h4>
-                    <p>Up to 6 hours of listening time with Active Noise Cancellation enabled.</p>
-                </div>
-                <div class="spec-item">
-                    <i class="fas fa-charging-station"></i>
-                    <h4>30 Hours Total Listening Time</h4>
-                    <p>More than 30 hours of listening time with the MagSafe Charging Case.</p>
-                </div>
-                <div class="spec-item">
-                    <i class="fas fa-tachometer-alt"></i>
-                    <h4>5-Minute Charge</h4>
-                    <p>Get around 1 hour of listening time with just a 5-minute charge.</p>
-                </div>
-                <div class="spec-item">
-                    <i class="fas fa-water"></i>
-                    <h4>Sweat and Water Resistant</h4>
-                    <p>IP54 rating for earbuds and IPX4 for the charging case.</p>
-                </div>
-                <div class="spec-item">
-                    <i class="fas fa-microphone"></i>
-                    <h4>Multiple Microphones</h4>
-                    <p>Dual beamforming microphones and an inward-facing microphone for voice pickup.</p>
-                </div>
-                <div class="spec-item">
-                    <i class="fas fa-wifi"></i>
-                    <h4>Bluetooth 5.3</h4>
-                    <p>Latest Bluetooth technology for stable connection and improved audio quality.</p>
-                </div>
+        <div class="grid-con">
+            <div class="col-span-4 m-col-span-12 l-col-span-12">
+                <h3>Tech Specs</h3>
+            </div>
+            
+            <div class="col-span-4 m-col-span-6 l-col-span-4 spec-item">
+                <i class="fas fa-battery-full"></i>
+                <h4>6 Hours of Listening Time</h4>
+                <p>Up to 6 hours of listening time with Active Noise Cancellation enabled.</p>
+            </div>
+            
+            <div class="col-span-4 m-col-span-6 l-col-span-4 spec-item">
+                <i class="fas fa-charging-station"></i>
+                <h4>30 Hours Total Listening Time</h4>
+                <p>More than 30 hours of listening time with the MagSafe Charging Case.</p>
+            </div>
+            
+            <div class="col-span-4 m-col-span-6 l-col-span-4 spec-item">
+                <i class="fas fa-tachometer-alt"></i>
+                <h4>5-Minute Charge</h4>
+                <p>Get around 1 hour of listening time with just a 5-minute charge.</p>
+            </div>
+            
+            <div class="col-span-4 m-col-span-6 l-col-span-4 spec-item">
+                <i class="fas fa-water"></i>
+                <h4>Sweat and Water Resistant</h4>
+                <p>IP54 rating for earbuds and IPX4 for the charging case.</p>
+            </div>
+            
+            <div class="col-span-4 m-col-span-6 l-col-span-4 spec-item">
+                <i class="fas fa-microphone"></i>
+                <h4>Multiple Microphones</h4>
+                <p>Dual beamforming microphones and an inward-facing microphone for voice pickup.</p>
+            </div>
+            
+            <div class="col-span-4 m-col-span-6 l-col-span-4 spec-item">
+                <i class="fas fa-wifi"></i>
+                <h4>Bluetooth 5.3</h4>
+                <p>Latest Bluetooth technology for stable connection and improved audio quality.</p>
             </div>
         </div>
     </section>
     
     <!-- Footer -->
     <footer>
-        <div class="footer-container">
-            <div class="footer-links">
-                <div class="footer-column">
-                    <h5>Shop and Learn</h5>
-                    <ul>
-                        <li><a href="#">Shop EarBuds</a></li>
-                        <li><a href="#">Accessories</a></li>
-                        <li><a href="#">Trade In</a></li>
-                        <li><a href="#">Financing</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h5>Services</h5>
-                    <ul>
-                        <li><a href="#">Buzz Music</a></li>
-                        <li><a href="#">Buzz TV+</a></li>
-                        <li><a href="#">Buzz Fitness+</a></li>
-                        <li><a href="#">Support</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h5>Buzz Store</h5>
-                    <ul>
-                        <li><a href="#">Find a Store</a></li>
-                        <li><a href="#">Genius Bar</a></li>
-                        <li><a href="#">Today at Buzz</a></li>
-                        <li><a href="#">Buzz Camp</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h5>About Buzz</h5>
-                    <ul>
-                        <li><a href="#">Newsroom</a></li>
-                        <li><a href="#">Buzz Leadership</a></li>
-                        <li><a href="#">Career Opportunities</a></li>
-                        <li><a href="#">Investors</a></li>
-                    </ul>
-                </div>
+        <div class="grid-con">
+            <div class="col-span-4 m-col-span-6 l-col-span-3 footer-column">
+                <h5>Shop and Learn</h5>
+                <ul>
+                    <li><a href="#">Shop EarBuds</a></li>
+                    <li><a href="#">Accessories</a></li>
+                    <li><a href="#">Trade In</a></li>
+                    <li><a href="#">Financing</a></li>
+                </ul>
             </div>
-            <div class="footer-bottom">
+            
+            <div class="col-span-4 m-col-span-6 l-col-span-3 footer-column">
+                <h5>Services</h5>
+                <ul>
+                    <li><a href="#">Buzz Music</a></li>
+                    <li><a href="#">Buzz TV+</a></li>
+                    <li><a href="#">Buzz Fitness+</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-span-4 m-col-span-6 l-col-span-3 footer-column">
+                <h5>Buzz Store</h5>
+                <ul>
+                    <li><a href="#">Find a Store</a></li>
+                    <li><a href="#">Genius Bar</a></li>
+                    <li><a href="#">Today at Buzz</a></li>
+                    <li><a href="#">Buzz Camp</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-span-4 m-col-span-6 l-col-span-3 footer-column">
+                <h5>About Buzz</h5>
+                <ul>
+                    <li><a href="#">Newsroom</a></li>
+                    <li><a href="#">Buzz Leadership</a></li>
+                    <li><a href="#">Career Opportunities</a></li>
+                    <li><a href="#">Investors</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-span-4 m-col-span-12 l-col-span-12 footer-bottom">
                 <p>Copyright © 2025 Buzz Inc. All rights reserved.</p>
                 <div class="footer-links-legal">
                     <a href="#">Privacy Policy</a>
@@ -231,9 +273,9 @@
     </footer>
 
     <!-- Scripts -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
-<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
-<script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
