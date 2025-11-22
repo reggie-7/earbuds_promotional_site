@@ -1,57 +1,52 @@
-# earbuds_promotional_site
-This repo is for earbuds promotional website
-# Buzz EarBuds - Premium Wireless Experience
+ Earbuds Promotional Site
 
-A sleek, modern, sophisticated design page for Buzz EarBuds Pro featuring 3D model visualization with interactive hotspots.
+## Introduction and Project Goals
 
-## Features
+This project involves the complete design, asset creation, and front-end development of a promotional website for a new pair of earbuds and their charging case. The primary objective is to integrate **3D modeled assets** (created in Cinema 4D) with **responsive web development** techniques to create an immersive, promotional user experience. Key features include advanced scroll-driven animations and the integration of a reality (AR) object with interactive informational hot spots.
 
-- **3D Product Visualization** - Interactive 3D model using Google's Model Viewer
-- **Interactive Hotspots** - Hover over hotspots to reveal product features
-- **Responsive Design** - Optimized for all screen sizes
-- **Smooth Animations** - GSAP-powered animations for seamless user experience
 
-## Browser Support
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+## Technologies Used
 
-**Note:** Model Viewer requires WebGL support for 3D rendering.
+**GSAP**
+**HTML5**
+**CSS**
+**JS**
+**SASS**
+**C4D**
+**GOOGLE MODEL VIEWER**
 
-## Dependencies
+## Installation
 
-All dependencies are loaded via CDN:
+No installation is needed to view the final project. All required files are provided within the repository.
 
-- GSAP 3.13.0
-- ScrollTrigger 1.0.5
-- Model Viewer 4.0.0
-- Font Awesome 6.4.0
 
-## Performance Optimization
 
-- Lazy loading for images
-- Optimized 3D model (GLTF format)
-- CSS transitions over JavaScript animations where possible
-- Minimal external dependencies
+## Usage
 
-## Accessibility
+You can view the promotional website by opening the `index.html` file in your preferred web browser.
 
-- Semantic HTML5 structure with `<main>`, `<nav>`, `<section>`, `<footer>`
-- Proper heading hierarchy (h1, h2, h3)
-- Alt text for images
-- Focus states for interactive elements
-- ARIA attributes where needed
+
+
+## Contributing
+
+Contributions are welcome! Please follow these standard steps:
+
+1.  **Fork** the repository.
+2.  Create your feature branch: `git checkout -b my-new-feature`
+3.  Commit your changes: `git commit -am 'Add some feature'`
+4.  Push to the branch: `git push origin my-new-feature`
+5.  Submit a **Pull Request**.
+
+
+
+## History
+
+The project development history will be tracked via Git commits and merges to the `master` branch.
 
 ## Credits
- - Rabin Tamang
+Rabin Tamang
 
 ## License
 
-This project is open source and available under the MIT License.
-
-## Support
-
-
-
+MIT License
